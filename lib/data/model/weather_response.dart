@@ -1,15 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'model.g.dart';
+part 'weather_response.g.dart';
 
 @JsonSerializable()
 class WeatherResponse {
   final String name;
   final String country;
   final String localtime;
-  final String text;
-  final String icon;
-
   final String temp_c;
   final String condition;
 
@@ -19,8 +16,6 @@ class WeatherResponse {
     this.name,
     this.country,
     this.localtime,
-    this.text,
-    this.icon,
   );
 
   factory WeatherResponse.fromJson(Map<String, dynamic> json) =>

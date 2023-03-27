@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/http.dart';
-import 'package:weather/data/model/model.dart';
-import 'package:weather/domain/current_weather.dart';
+import 'package:weather/data/model/condition_response.dart';
+import 'package:weather/data/model/weather_response.dart';
+import 'package:weather/domain/entities/condition.dart';
+import 'package:weather/domain/entities/current_weather.dart';
 
 part 'weather_values.g.dart';
 
@@ -17,5 +19,5 @@ abstract class WeatherValuesApiClient {
   Future<List<WeatherResponse>> getLocation();
 //jel ovo jedan response ili trebam svaki dio jsona ovako parsirati?
   @GET('current/')
-  Future<List<WeatherResponse>> getCurrent();
+  Future<List<ConditionResponse>> getCurrent();
 }

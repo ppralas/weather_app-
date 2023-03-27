@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:weather/domain/condition.dart';
+import 'package:weather/domain/entities/condition.dart';
 
 class CurrentWeather extends Equatable {
   final String temp_c;

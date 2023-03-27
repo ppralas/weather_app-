@@ -46,13 +46,13 @@ class _WeatherValuesApiClient implements WeatherValuesApiClient {
   }
 
   @override
-  Future<List<WeatherResponse>> getCurrent() async {
+  Future<List<ConditionResponse>> getCurrent() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<WeatherResponse>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<ConditionResponse>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -65,7 +65,8 @@ class _WeatherValuesApiClient implements WeatherValuesApiClient {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => WeatherResponse.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) =>
+            ConditionResponse.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
