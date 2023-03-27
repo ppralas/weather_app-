@@ -10,7 +10,7 @@ final apiClient = Provider((ref) => WeatherValuesApiClient(Dio()));
 
 @RestApi(baseUrl: 'https://weatherapi-com.p.rapidapi.com')
 abstract class WeatherValuesApiClient {
-  factory WeatherValuesApiClient(Dio dio, {String baseUrl}) =>
+  factory WeatherValuesApiClient(Dio dio, {String baseUrl}) =
       _WeatherValuesApiClient;
 
   @GET('/location')
