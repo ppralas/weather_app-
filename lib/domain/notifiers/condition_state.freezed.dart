@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'weather_state.dart';
+part of 'condition_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,29 +15,29 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$WeatherState {
+mixin _$ConditionState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CurrentWeather> weather) loading,
+    required TResult Function(List<Condition> current) loading,
     required TResult Function(Failure failure) error,
-    required TResult Function(List<CurrentWeather> weather) loaded,
+    required TResult Function(List<Condition> condition) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CurrentWeather> weather)? loading,
+    TResult? Function(List<Condition> current)? loading,
     TResult? Function(Failure failure)? error,
-    TResult? Function(List<CurrentWeather> weather)? loaded,
+    TResult? Function(List<Condition> condition)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CurrentWeather> weather)? loading,
+    TResult Function(List<Condition> current)? loading,
     TResult Function(Failure failure)? error,
-    TResult Function(List<CurrentWeather> weather)? loaded,
+    TResult Function(List<Condition> condition)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,16 +69,16 @@ mixin _$WeatherState {
 }
 
 /// @nodoc
-abstract class $WeatherStateCopyWith<$Res> {
-  factory $WeatherStateCopyWith(
-          WeatherState value, $Res Function(WeatherState) then) =
-      _$WeatherStateCopyWithImpl<$Res, WeatherState>;
+abstract class $ConditionStateCopyWith<$Res> {
+  factory $ConditionStateCopyWith(
+          ConditionState value, $Res Function(ConditionState) then) =
+      _$ConditionStateCopyWithImpl<$Res, ConditionState>;
 }
 
 /// @nodoc
-class _$WeatherStateCopyWithImpl<$Res, $Val extends WeatherState>
-    implements $WeatherStateCopyWith<$Res> {
-  _$WeatherStateCopyWithImpl(this._value, this._then);
+class _$ConditionStateCopyWithImpl<$Res, $Val extends ConditionState>
+    implements $ConditionStateCopyWith<$Res> {
+  _$ConditionStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +95,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$WeatherStateCopyWithImpl<$Res, _$_Initial>
+    extends _$ConditionStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -103,18 +103,12 @@ class __$$_InitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
+class _$_Initial implements _Initial {
   const _$_Initial();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'WeatherState.initial'));
+  String toString() {
+    return 'ConditionState.initial()';
   }
 
   @override
@@ -130,9 +124,9 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CurrentWeather> weather) loading,
+    required TResult Function(List<Condition> current) loading,
     required TResult Function(Failure failure) error,
-    required TResult Function(List<CurrentWeather> weather) loaded,
+    required TResult Function(List<Condition> condition) loaded,
   }) {
     return initial();
   }
@@ -141,9 +135,9 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CurrentWeather> weather)? loading,
+    TResult? Function(List<Condition> current)? loading,
     TResult? Function(Failure failure)? error,
-    TResult? Function(List<CurrentWeather> weather)? loaded,
+    TResult? Function(List<Condition> condition)? loaded,
   }) {
     return initial?.call();
   }
@@ -152,9 +146,9 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CurrentWeather> weather)? loading,
+    TResult Function(List<Condition> current)? loading,
     TResult Function(Failure failure)? error,
-    TResult Function(List<CurrentWeather> weather)? loaded,
+    TResult Function(List<Condition> condition)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,7 +195,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   }
 }
 
-abstract class _Initial implements WeatherState {
+abstract class _Initial implements ConditionState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -211,12 +205,12 @@ abstract class _$$_LoadingCopyWith<$Res> {
           _$_Loading value, $Res Function(_$_Loading) then) =
       __$$_LoadingCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CurrentWeather> weather});
+  $Res call({List<Condition> current});
 }
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$WeatherStateCopyWithImpl<$Res, _$_Loading>
+    extends _$ConditionStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -224,41 +218,33 @@ class __$$_LoadingCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weather = null,
+    Object? current = null,
   }) {
     return _then(_$_Loading(
-      null == weather
-          ? _value._weather
-          : weather // ignore: cast_nullable_to_non_nullable
-              as List<CurrentWeather>,
+      null == current
+          ? _value._current
+          : current // ignore: cast_nullable_to_non_nullable
+              as List<Condition>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Loading with DiagnosticableTreeMixin implements _Loading {
-  const _$_Loading(final List<CurrentWeather> weather) : _weather = weather;
+class _$_Loading implements _Loading {
+  const _$_Loading(final List<Condition> current) : _current = current;
 
-  final List<CurrentWeather> _weather;
+  final List<Condition> _current;
   @override
-  List<CurrentWeather> get weather {
-    if (_weather is EqualUnmodifiableListView) return _weather;
+  List<Condition> get current {
+    if (_current is EqualUnmodifiableListView) return _current;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_weather);
+    return EqualUnmodifiableListView(_current);
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherState.loading(weather: $weather)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'WeatherState.loading'))
-      ..add(DiagnosticsProperty('weather', weather));
+  String toString() {
+    return 'ConditionState.loading(current: $current)';
   }
 
   @override
@@ -266,12 +252,12 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loading &&
-            const DeepCollectionEquality().equals(other._weather, _weather));
+            const DeepCollectionEquality().equals(other._current, _current));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_weather));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_current));
 
   @JsonKey(ignore: true)
   @override
@@ -283,35 +269,35 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CurrentWeather> weather) loading,
+    required TResult Function(List<Condition> current) loading,
     required TResult Function(Failure failure) error,
-    required TResult Function(List<CurrentWeather> weather) loaded,
+    required TResult Function(List<Condition> condition) loaded,
   }) {
-    return loading(weather);
+    return loading(current);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CurrentWeather> weather)? loading,
+    TResult? Function(List<Condition> current)? loading,
     TResult? Function(Failure failure)? error,
-    TResult? Function(List<CurrentWeather> weather)? loaded,
+    TResult? Function(List<Condition> condition)? loaded,
   }) {
-    return loading?.call(weather);
+    return loading?.call(current);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CurrentWeather> weather)? loading,
+    TResult Function(List<Condition> current)? loading,
     TResult Function(Failure failure)? error,
-    TResult Function(List<CurrentWeather> weather)? loaded,
+    TResult Function(List<Condition> condition)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(weather);
+      return loading(current);
     }
     return orElse();
   }
@@ -354,10 +340,10 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   }
 }
 
-abstract class _Loading implements WeatherState {
-  const factory _Loading(final List<CurrentWeather> weather) = _$_Loading;
+abstract class _Loading implements ConditionState {
+  const factory _Loading(final List<Condition> current) = _$_Loading;
 
-  List<CurrentWeather> get weather;
+  List<Condition> get current;
   @JsonKey(ignore: true)
   _$$_LoadingCopyWith<_$_Loading> get copyWith =>
       throw _privateConstructorUsedError;
@@ -373,7 +359,7 @@ abstract class _$$_ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ErrorCopyWithImpl<$Res>
-    extends _$WeatherStateCopyWithImpl<$Res, _$_Error>
+    extends _$ConditionStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, _then);
@@ -394,23 +380,15 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error with DiagnosticableTreeMixin implements _Error {
+class _$_Error implements _Error {
   const _$_Error(this.failure);
 
   @override
   final Failure failure;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherState.error(failure: $failure)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'WeatherState.error'))
-      ..add(DiagnosticsProperty('failure', failure));
+  String toString() {
+    return 'ConditionState.error(failure: $failure)';
   }
 
   @override
@@ -434,9 +412,9 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CurrentWeather> weather) loading,
+    required TResult Function(List<Condition> current) loading,
     required TResult Function(Failure failure) error,
-    required TResult Function(List<CurrentWeather> weather) loaded,
+    required TResult Function(List<Condition> condition) loaded,
   }) {
     return error(failure);
   }
@@ -445,9 +423,9 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CurrentWeather> weather)? loading,
+    TResult? Function(List<Condition> current)? loading,
     TResult? Function(Failure failure)? error,
-    TResult? Function(List<CurrentWeather> weather)? loaded,
+    TResult? Function(List<Condition> condition)? loaded,
   }) {
     return error?.call(failure);
   }
@@ -456,9 +434,9 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CurrentWeather> weather)? loading,
+    TResult Function(List<Condition> current)? loading,
     TResult Function(Failure failure)? error,
-    TResult Function(List<CurrentWeather> weather)? loaded,
+    TResult Function(List<Condition> condition)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -505,7 +483,7 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   }
 }
 
-abstract class _Error implements WeatherState {
+abstract class _Error implements ConditionState {
   const factory _Error(final Failure failure) = _$_Error;
 
   Failure get failure;
@@ -519,12 +497,12 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CurrentWeather> weather});
+  $Res call({List<Condition> condition});
 }
 
 /// @nodoc
 class __$$_LoadedCopyWithImpl<$Res>
-    extends _$WeatherStateCopyWithImpl<$Res, _$_Loaded>
+    extends _$ConditionStateCopyWithImpl<$Res, _$_Loaded>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
       : super(_value, _then);
@@ -532,41 +510,33 @@ class __$$_LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weather = null,
+    Object? condition = null,
   }) {
     return _then(_$_Loaded(
-      null == weather
-          ? _value._weather
-          : weather // ignore: cast_nullable_to_non_nullable
-              as List<CurrentWeather>,
+      null == condition
+          ? _value._condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as List<Condition>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
-  const _$_Loaded(final List<CurrentWeather> weather) : _weather = weather;
+class _$_Loaded implements _Loaded {
+  const _$_Loaded(final List<Condition> condition) : _condition = condition;
 
-  final List<CurrentWeather> _weather;
+  final List<Condition> _condition;
   @override
-  List<CurrentWeather> get weather {
-    if (_weather is EqualUnmodifiableListView) return _weather;
+  List<Condition> get condition {
+    if (_condition is EqualUnmodifiableListView) return _condition;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_weather);
+    return EqualUnmodifiableListView(_condition);
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherState.loaded(weather: $weather)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'WeatherState.loaded'))
-      ..add(DiagnosticsProperty('weather', weather));
+  String toString() {
+    return 'ConditionState.loaded(condition: $condition)';
   }
 
   @override
@@ -574,12 +544,13 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other._weather, _weather));
+            const DeepCollectionEquality()
+                .equals(other._condition, _condition));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_weather));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_condition));
 
   @JsonKey(ignore: true)
   @override
@@ -591,35 +562,35 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CurrentWeather> weather) loading,
+    required TResult Function(List<Condition> current) loading,
     required TResult Function(Failure failure) error,
-    required TResult Function(List<CurrentWeather> weather) loaded,
+    required TResult Function(List<Condition> condition) loaded,
   }) {
-    return loaded(weather);
+    return loaded(condition);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CurrentWeather> weather)? loading,
+    TResult? Function(List<Condition> current)? loading,
     TResult? Function(Failure failure)? error,
-    TResult? Function(List<CurrentWeather> weather)? loaded,
+    TResult? Function(List<Condition> condition)? loaded,
   }) {
-    return loaded?.call(weather);
+    return loaded?.call(condition);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CurrentWeather> weather)? loading,
+    TResult Function(List<Condition> current)? loading,
     TResult Function(Failure failure)? error,
-    TResult Function(List<CurrentWeather> weather)? loaded,
+    TResult Function(List<Condition> condition)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(weather);
+      return loaded(condition);
     }
     return orElse();
   }
@@ -662,10 +633,10 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   }
 }
 
-abstract class _Loaded implements WeatherState {
-  const factory _Loaded(final List<CurrentWeather> weather) = _$_Loaded;
+abstract class _Loaded implements ConditionState {
+  const factory _Loaded(final List<Condition> condition) = _$_Loaded;
 
-  List<CurrentWeather> get weather;
+  List<Condition> get condition;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;

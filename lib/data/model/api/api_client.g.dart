@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'weather_values.dart';
+part of 'api_client.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -21,13 +21,13 @@ class _WeatherValuesApiClient implements WeatherValuesApiClient {
   String? baseUrl;
 
   @override
-  Future<List<WeatherResponse>> getLocation() async {
+  Future<List<LocationResponse>> getLocation() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<WeatherResponse>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<LocationResponse>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -40,13 +40,39 @@ class _WeatherValuesApiClient implements WeatherValuesApiClient {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => WeatherResponse.fromJson(i as Map<String, dynamic>))
+        .map(
+            (dynamic i) => LocationResponse.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<List<ConditionResponse>> getCurrent() async {
+  Future<List<CurrentResponse>> getCurrent() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<CurrentResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/current',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => CurrentResponse.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
+  Future<List<ConditionResponse>> getCondition() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -59,7 +85,7 @@ class _WeatherValuesApiClient implements WeatherValuesApiClient {
     )
             .compose(
               _dio.options,
-              'current/',
+              '/condition',
               queryParameters: queryParameters,
               data: _data,
             )
