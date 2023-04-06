@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod/riverpod.dart';
 
-import 'package:weather/data/current_response.dart';
+import 'package:weather/data/current_repository.dart';
 import 'package:weather/domain/notifiers/current_state.dart';
 
 final currentStateProvider =
