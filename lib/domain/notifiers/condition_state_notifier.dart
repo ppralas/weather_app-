@@ -2,7 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/data/condition_repository.dart';
 import 'package:weather/domain/notifiers/condition_state.dart';
 
-final conditionStateProvider = StateNotifierProvider(
+final conditionStateProvider =
+    StateNotifierProvider<ConditionStateNotifier, ConditionState>(
   (ref) => ConditionStateNotifier(
     ref.watch(conditionRepositoryProvider)..getCondition(),
   ),
@@ -18,9 +19,8 @@ class ConditionStateNotifier extends StateNotifier<ConditionState> {
     if (state.whenOrNull(
           loading: (_) => true,
         ) ==
-        true) {
-      return;
-    }
+        true) return;
+
     state = ConditionState.loading(
       state.maybeWhen(
         loading: (condition) => condition,

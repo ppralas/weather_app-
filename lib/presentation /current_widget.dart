@@ -1,38 +1,42 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:weather/domain/entities/location.dart';
-import 'package:weather/domain/notifiers/location_state_notifier.dart';
+import 'package:weather/domain/entities/current.dart';
+import 'package:weather/domain/notifiers/current_state_notifier.dart';
 
-class LocationListView extends ConsumerWidget {
-  const LocationListView({super.key});
+class CurrentListView extends ConsumerWidget {
+  const CurrentListView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locationState = ref.watch(locationStateProvider);
+    final currentState = ref.watch(currentStateProvider);
 
     return Scaffold(
-      body: locationState.when(
+      body: currentState.when(
         initial: () => SizedBox(),
-        loading: (List<Location> location) =>
-            LocationView(location: location, isLoading: true),
+        loading: (List<Current> current) => CurrentWidget(
+          current: current,
+          isLoading: true,
+        ),
         error: (error) {
           log(error.stackTrace.toString());
           return Text(error.error.toString());
         },
-        loaded: (data) => LocationView(location: data, isLoading: true),
+        loaded: (data) => CurrentWidget(
+          current: data,
+          isLoading: true,
+        ),
       ),
     );
   }
 }
 
-class LocationView extends ConsumerWidget {
-  final List<Location> location;
+class CurrentWidget extends ConsumerWidget {
+  final List<Current> current;
   final bool isLoading;
 
-  const LocationView({
-    required this.location,
+  const CurrentWidget({
+    required this.current,
     required this.isLoading,
     Key? key,
   }) : super(key: key);
@@ -42,22 +46,20 @@ class LocationView extends ConsumerWidget {
     return Container(
       child: ListView.separated(
         itemBuilder: (BuildContext ctx, int index) {
-          if (index == location.length) {
+          if (index == current.length) {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
-          final locationValue = location[index];
+          final currentValue = current[index];
           return Column(
             children: [
-              Text(locationValue.country),
-              Text(locationValue.name),
-              Text(locationValue.localtime),
+              Text(currentValue.temp_c.toString()),
             ],
           );
         },
         separatorBuilder: (BuildContext context, int index) => Divider(),
-        itemCount: location.length + (isLoading ? 1 : 0),
+        itemCount: current.length + (isLoading ? 1 : 0),
       ),
     );
   }

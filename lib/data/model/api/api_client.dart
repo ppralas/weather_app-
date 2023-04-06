@@ -23,7 +23,6 @@ abstract class WeatherValuesApiClient {
 
   @GET('/location')
   Future<List<LocationResponse>> getLocation();
-//jel ovo jedan response ili trebam svaki dio jsona ovako parsirati?
   @GET('/current')
   Future<List<CurrentResponse>> getCurrent();
   @GET('/condition')

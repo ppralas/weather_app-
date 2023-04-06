@@ -6,7 +6,10 @@ import 'package:weather/domain/notifiers/current_state.dart';
 
 final currentStateProvider =
     StateNotifierProvider<CurrentStateNotifier, CurrentState>(
-        (ref) => CurrentStateNotifier(ref.watch(currentRepositoryProvider)));
+  (ref) => CurrentStateNotifier(
+    ref.watch(currentRepositoryProvider)..getCurrent(),
+  ),
+);
 
 class CurrentStateNotifier extends StateNotifier<CurrentState> {
   final CurrentRepository _currentRepository;
